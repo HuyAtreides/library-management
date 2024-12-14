@@ -22,7 +22,7 @@ public class DBConnection {
         if (checkDriver()) {
             this.DBName = "library"; // Default database name
             this.username = "sa"; // Default username
-            this.password = "Mysql@123"; // Default password
+            this.password = "MSsql@123"; // Default password
             setupConnection();
         }
     }
