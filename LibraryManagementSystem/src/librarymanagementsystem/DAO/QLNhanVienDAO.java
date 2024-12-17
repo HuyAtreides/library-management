@@ -47,24 +47,24 @@ public class QLNhanVienDAO {
         System.out.println("INSERT INTO library.nhanvien(maNhanVien, password_hashed, hoTen, ngaySinh, diaChi, sdt, email, chucVu, salt) "
                 + "VALUES ('"
                 + nhanVien.getMaNhanVien()+ "','"     
-                + nhanVien.getPassword()+ "','"   
+                + nhanVien.getPassword()+ "',N'"
                 + nhanVien.getHoTen()+ "','"   
-                + nhanVien.getNgaySinh()+ "','"   
+                + nhanVien.getNgaySinh()+ "',N'"
                 + nhanVien.getDiaChi()+ "','"   
                 + nhanVien.getSdt()+ "','"   
-                + nhanVien.getEmail()+ "','"   
+                + nhanVien.getEmail()+ "',N'"
                 + nhanVien.getChucVu()+ "','"
 //                + new PasswordHashing().getSalt()+ "');");
                 + nhanVien.getSalt()+ "');");
         Boolean check = DBNhanVien.SQLUpdate("INSERT INTO library.nhanvien(maNhanVien, password_hashed, hoTen, ngaySinh, diaChi, sdt, email, chucVu, salt) "
                 + "VALUES ('"
                 + nhanVien.getMaNhanVien()+ "','"     
-                + nhanVien.getPassword()+ "','"   
+                + nhanVien.getPassword()+ "',N'"
                 + nhanVien.getHoTen()+ "','"   
-                + nhanVien.getNgaySinh()+ "','"   
+                + nhanVien.getNgaySinh()+ "',N'"
                 + nhanVien.getDiaChi()+ "','"   
                 + nhanVien.getSdt()+ "','"   
-                + nhanVien.getEmail()+ "','"   
+                + nhanVien.getEmail()+ "',N'"
                 + nhanVien.getChucVu()+ "','"
                 + nhanVien.getSalt()+ "');");
         DBNhanVien.closeConnection();
@@ -82,12 +82,12 @@ public class QLNhanVienDAO {
         DBNhanVien = new DBConnection();
         Boolean check = DBNhanVien.SQLUpdate("Update library.nhanvien Set "
                 + " password_hashed='" + nhanVien.getPassword()
-                + "', hoTen='" + nhanVien.getHoTen()
+                + "', hoTen=N'" + nhanVien.getHoTen()
                 + "', ngaySinh='" + nhanVien.getNgaySinh()
-                + "', diaChi='" + nhanVien.getDiaChi()
+                + "', diaChi=N'" + nhanVien.getDiaChi()
                 + "', sdt=" + nhanVien.getSdt()
                 + ", email='" + nhanVien.getEmail()
-                + "', chucVu='" + nhanVien.getChucVu()
+                + "', chucVu=N'" + nhanVien.getChucVu()
                 + "' where maNhanVien='" + nhanVien.getMaNhanVien()+ "'");
         DBNhanVien.closeConnection();
         return check;

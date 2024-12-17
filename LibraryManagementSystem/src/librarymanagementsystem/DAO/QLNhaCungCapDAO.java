@@ -42,10 +42,10 @@ public class QLNhaCungCapDAO {
         DBNhaCungCap = new DBConnection();
         Boolean check = DBNhaCungCap.SQLUpdate("INSERT INTO library.nhacungcap(maNCC, tenNCC, sdt, email, diaChi) "
                 + "VALUES ('"
-                + nhaCungCap.getMaNCC()+ "','"  
+                + nhaCungCap.getMaNCC()+ "',N'"
                 + nhaCungCap.getTenNCC()+ "','"  
                 + nhaCungCap.getSdt()+ "','"  
-                + nhaCungCap.getEmail()+ "','"  
+                + nhaCungCap.getEmail()+ "',N'"
                 + nhaCungCap.getDiaChi()+ "');");
         DBNhaCungCap.closeConnection();
         return check;

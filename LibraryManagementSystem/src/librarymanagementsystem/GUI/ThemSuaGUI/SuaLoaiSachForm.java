@@ -34,7 +34,7 @@ public class SuaLoaiSachForm extends javax.swing.JFrame {
         QLLoaiSachDTO sach = new QLLoaiSachBUS().getLoaiSach(maSach);
         ms = maSach;
         url = sach.getHinh();
-        initComponents(sach.getTenSach(), sach.getTenTacGia(), sach.getTenNXB(), sach.getTheLoai(), sach.getNgonNgu(), Integer.toString(sach.getNamXB()), sach.getTomTatNoiDung(), Integer.toString(sach.getSoTrang()), Integer.toString(sach.getGiaTien()), sach.getHinh());
+        initComponents(sach.getTenSach(), sach.getTenTacGia(), sach.getTenNXB(), sach.getTheLoai(), sach.getNgonNgu(), Integer.toString(sach.getNamXB()), sach.getTomTatNoiDung(), Integer.toString(sach.getGiaTien()), Integer.toString(sach.getSoTrang()), sach.getHinh());
         setSize(830, 523);
         setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));

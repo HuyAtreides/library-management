@@ -240,15 +240,15 @@ public class ThemPhieuNhapForm extends javax.swing.JFrame{
             error_mess = "Ngày Nhập trống!!!";
             return false;
         }
-        if (dp.check_maQuanLy(maNV)){
+        if (!dp.check_maQuanLy(maNV)){
             error_mess = "Mã Nhân Viên nhập sai!!!";
             return false;
         }
-        if (dp.check_maNCC(maNCC)){
+        if (!dp.check_maNCC(maNCC)){
             error_mess = "Mã Nhà Cung Cấp nhập sai!!!";
             return false;
         }
-        if (dp.check_ngaythangnam(ngayNhap)){
+        if (!dp.check_ngaythangnam(ngayNhap)){
             error_mess = "Ngày Nhập nhập sai!!!";
             return false;
         }
@@ -299,6 +299,7 @@ public class ThemPhieuNhapForm extends javax.swing.JFrame{
         ArrayList<Integer> soLuong =getSoLuong();
         System.out.println(maSach);
         System.out.println(soLuong);
+        System.out.println(ngayNhap);
         if (check_input(maNV, maNCC, ngayNhap)){
             System.out.println("Nhập Thành Công");
             if (pnBUS.add(maPhieuNhap, ngayNhap, maSach, soLuong, maNV, maNCC, 0, 0)){

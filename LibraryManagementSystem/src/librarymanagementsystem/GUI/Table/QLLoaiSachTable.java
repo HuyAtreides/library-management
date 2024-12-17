@@ -48,9 +48,10 @@ public class QLLoaiSachTable{
                     case 7:
                         return loaiSach.getNamXB();
                     case 8:
-                        return loaiSach.getGiaTien();
-                    case 9:
                         return loaiSach.getSoTrang();
+                    case 9:
+                        return loaiSach.getGiaTien();
+
                 }
                 return null;
             }
@@ -80,9 +81,9 @@ public class QLLoaiSachTable{
                     case 7:
                         return "Năm Xuất Bản";
                     case 8:
-                        return "Giá Tiền";
-                    case 9:
                         return "Số Trang";
+                    case 9:
+                        return "Giá Tiền";
                 }
                 return null;
             }

@@ -48,13 +48,13 @@ public class QLLoaiSachDAO {
         DBSach = new DBConnection();
         Boolean check = DBSach.SQLUpdate("INSERT INTO library.loaisach(maSach, tenSach, tenTacGia, tenNXB, namXB, theLoai, ngonNgu, tomTatNoiDung, giaTien, soTrang, hinhSach) "
                 + "VALUES ('"
-                + sach.getMaSach() + "', '"
-                + sach.getTenSach() + "', '"
-                + sach.getTenTacGia() + "','"
+                + sach.getMaSach() + "', N'"
+                + sach.getTenSach() + "', N'"
+                + sach.getTenTacGia() + "',N'"
                 + sach.getTenNXB() + "',"
-                + sach.getNamXB() + ",'"
-                + sach.getTheLoai() + "','"      
-                + sach.getNgonNgu() + "','"      
+                + sach.getNamXB() + ",N'"
+                + sach.getTheLoai() + "',N'"
+                + sach.getNgonNgu() + "',N'"
                 + sach.getTomTatNoiDung() + "',"   
                 + sach.getGiaTien() + ","   
                 + sach.getSoTrang() + ",'"
@@ -72,17 +72,17 @@ public class QLLoaiSachDAO {
     
     public Boolean mod(QLLoaiSachDTO sach){
         DBSach = new DBConnection();
-        Boolean check = DBSach.SQLUpdate("Update loaisach Set "
-                + " tenSach='" + sach.getTenSach()
-                + "', tenTacGia='" + sach.getTenTacGia()
-                + "', tenNXB='" + sach.getTenNXB()
+        Boolean check = DBSach.SQLUpdate("Update library.loaisach Set "
+                + " tenSach=N'" + sach.getTenSach()
+                + "', tenTacGia=N'" + sach.getTenTacGia()
+                + "', tenNXB=N'" + sach.getTenNXB()
                 + "', namXB=" + sach.getNamXB()
-                + ", theLoai='" + sach.getTheLoai()
-                + "', ngonNgu='" + sach.getNgonNgu()
-                + "', tomTatNoiDung='" + sach.getTomTatNoiDung()
+                + ", theLoai=N'" + sach.getTheLoai()
+                + "', ngonNgu=N'" + sach.getNgonNgu()
+                + "', tomTatNoiDung=N'" + sach.getTomTatNoiDung()
                 + "', giaTien=" + sach.getGiaTien()
                 + ", soTrang=" + sach.getSoTrang()
-                + ", hinhSach='" + sach.getHinh()
+                + ", hinhSach=N'" + sach.getHinh()
                 + "' where maSach='" + sach.getMaSach() + "'");
         DBSach.closeConnection();
         return check;

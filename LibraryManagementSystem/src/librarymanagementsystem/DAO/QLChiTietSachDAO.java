@@ -78,7 +78,7 @@ public class QLChiTietSachDAO {
         Boolean check = DBChiTietSach.SQLUpdate("INSERT INTO library.chitietsach(IDSach, maSach, tinhTrang) "
                 + "VALUES ('"
                 + chiTietSach.getIDSach()+ "','"  
-                + chiTietSach.getMaSach()+ "','"  
+                + chiTietSach.getMaSach()+ "',N'"
                 + chiTietSach.getTinhTrang()+ "');");
         DBChiTietSach.closeConnection();
         return check;
@@ -94,7 +94,7 @@ public class QLChiTietSachDAO {
         DBChiTietSach = new DBConnection();
         Boolean check = DBChiTietSach.SQLUpdate("Update library.chitietsach Set "
                 + " maSach='" + chiTietSach.getMaSach()
-                + "', tinhTrang='" + chiTietSach.getTinhTrang()
+                + "', tinhTrang=N'" + chiTietSach.getTinhTrang()
                 + "' where IDSach='" + chiTietSach.getIDSach()+ "';");
         DBChiTietSach.closeConnection();
         return check;

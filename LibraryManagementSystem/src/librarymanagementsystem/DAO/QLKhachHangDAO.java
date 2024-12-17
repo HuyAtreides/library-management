@@ -43,9 +43,9 @@ public class QLKhachHangDAO {
         DBKhachHang = new DBConnection();
         Boolean check = DBKhachHang.SQLUpdate("INSERT INTO library.khachhang(maKhachHang, hoTen, ngaySinh, diaChi, sdt, email) "
                 + "VALUES ('"
-                + khachHang.getMaKhachHang()+ "','"  
+                + khachHang.getMaKhachHang()+ "',N'"
                 + khachHang.getHoTen()+ "','"  
-                + khachHang.getNgaySinh()+ "','"  
+                + khachHang.getNgaySinh()+ "',N'"
                 + khachHang.getDiaChi()+ "','"  
                 + khachHang.getSdt()+ "','"  
                 + khachHang.getEmail()+ "');"); 
@@ -54,6 +54,7 @@ public class QLKhachHangDAO {
     }
     
      public Boolean del(String maKhachHang){
+         DBKhachHang = new DBConnection();
         Boolean check = DBKhachHang.SQLUpdate("DELETE FROM library.khachhang WHERE khachhang.maKhachHang = '" + maKhachHang + "';");
         DBKhachHang.closeConnection();
         return check;
@@ -62,9 +63,9 @@ public class QLKhachHangDAO {
     public Boolean mod(QLKhachHangDTO khachHang){
         DBKhachHang = new DBConnection();
         Boolean check = DBKhachHang.SQLUpdate("Update library.khachhang Set "
-                + " hoTen='" + khachHang.getHoTen()
+                + " hoTen=N'" + khachHang.getHoTen()
                 + "', ngaySinh='" + khachHang.getNgaySinh()
-                + "', diaChi='" + khachHang.getDiaChi()
+                + "', diaChi=N'" + khachHang.getDiaChi()
                 + "', sdt='" + khachHang.getSdt()
                 + "', email='" + khachHang.getEmail()
                 + "' where maKhachHang='" + khachHang.getMaKhachHang()+ "';");

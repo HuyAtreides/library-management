@@ -40,7 +40,7 @@ public class QLLDPhatDAO {
         DBLDPhat = new DBConnection();
         Boolean check = DBLDPhat.SQLUpdate("INSERT INTO library.lydophat(maLDPhat, tenLDPhat, mucDo) "
                 + "VALUES ('"
-                + LDPhat.getMaLDPhat()+ "','"  
+                + LDPhat.getMaLDPhat()+ "',N'"
                 + LDPhat.getTenLDPhat()+ "','"  
                 + LDPhat.getMucDo()+ "');");
         DBLDPhat.closeConnection();
@@ -56,7 +56,7 @@ public class QLLDPhatDAO {
     public Boolean mod(QLLDPhatDTO LDPhat){
         DBLDPhat = new DBConnection();
         Boolean check = DBLDPhat.SQLUpdate("Update library.lydophat Set "
-                + " tenLDPhat='" + LDPhat.getTenLDPhat()
+                + " tenLDPhat=N'" + LDPhat.getTenLDPhat()
                 + "', mucDo='" + LDPhat.getMucDo()
                 + "' where maLDPhat='" + LDPhat.getMaLDPhat()+ "';");
         DBLDPhat.closeConnection();
