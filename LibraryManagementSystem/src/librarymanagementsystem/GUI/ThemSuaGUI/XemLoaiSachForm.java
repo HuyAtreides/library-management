@@ -5,6 +5,9 @@
  */
 package librarymanagementsystem.GUI.ThemSuaGUI;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.file.Path;
 import librarymanagementsystem.BUS.*;
 import java.awt.Color;
 
@@ -18,7 +21,12 @@ public class XemLoaiSachForm extends javax.swing.JFrame {
     QLLoaiSachBUS loaiSach = new QLLoaiSachBUS(0);
     
     public XemLoaiSachForm(String maSach) {
-        initComponents(maSach);
+        try {
+            initComponents(maSach);
+        }
+        catch (Exception e) {
+
+        }
         setSize(800, 577);
         setLocationRelativeTo(null);
         setBackground(new Color(0, 0, 0, 0));
@@ -31,7 +39,7 @@ public class XemLoaiSachForm extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents(String maSach) {
+    private void initComponents(String maSach) throws MalformedURLException {
 
         jPanel1 = new javax.swing.JPanel();
         tenSach_label = new javax.swing.JLabel();
@@ -62,8 +70,7 @@ public class XemLoaiSachForm extends javax.swing.JFrame {
         tenSach_label.setToolTipText(loaiSach.getLoaiSach(maSach).getTenSach());
         tenSach_label.setBounds(420, 45, 360, 30);
         jPanel1.add(tenSach_label);
-
-        hinhSach_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("../" + loaiSach.getLoaiSach(maSach).getHinh()))); // NOI18N
+        hinhSach_label.setIcon(new javax.swing.ImageIcon(Path.of(loaiSach.getLoaiSach(maSach).getHinh()).toUri().toURL())); // NOI18N
         hinhSach_label.setBounds(20, 25, 380, 380);
         jPanel1.add(hinhSach_label);
 
