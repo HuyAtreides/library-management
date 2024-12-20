@@ -44,7 +44,9 @@ public class PaginatedTableDecorator<T> {
         // add set Width Column
         int index = 0;
         for (int wid : widthColumns){
-            table.getColumnModel().getColumn(index++).setPreferredWidth(wid);
+            if (index < table.getColumnCount()) {
+                table.getColumnModel().getColumn(index++).setPreferredWidth(wid);
+            }
         }
         
         /*// Click event

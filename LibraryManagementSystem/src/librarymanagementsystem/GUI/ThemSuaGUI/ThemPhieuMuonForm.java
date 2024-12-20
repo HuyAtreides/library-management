@@ -6,6 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.BorderFactory;
@@ -278,9 +283,14 @@ public class ThemPhieuMuonForm extends javax.swing.JFrame{
         String thoiGianMuon = thoiGianMuon_Field.getText();
         String maPhieuMuon = dp.next_maMuonSach(pmBUS.getPKey());
         ArrayList<String> IDSach = getIDSach();
+        LocalDate startDate = LocalDate.parse(ngayMuon, DateTimeFormatter.ISO_DATE);
+
+        // Add days to the start date
+        LocalDate endDate = startDate.plusDays(Long.parseLong(thoiGianMuon));
+
         if (check_input(maThe, ngayMuon, thoiGianMuon)){
             System.out.println("Nhập Thành Công");
-            if (pmBUS.add(maPhieuMuon, maThe, IDSach, ngayMuon, Integer.parseInt(thoiGianMuon), "0000-00-00")){
+            if (pmBUS.add(maPhieuMuon, maThe, IDSach,ngayMuon, Integer.parseInt(thoiGianMuon), endDate.format(DateTimeFormatter.ISO_DATE))){
                 new AlertGUI(3, "Success", "Nhập Phiếu Nhập Thành Công!!!", "Quay Lại").setVisible(true);
                 this.dispose();
             }

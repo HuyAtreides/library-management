@@ -93,7 +93,7 @@ public class QLPhieuMuonBUS {
                 break;
             case "ID Sách":
                 for (QLPhieuMuonDTO e : arrMuonTra){
-                    if (e.getIDSach().toString().toLowerCase().contains(value)) {
+                    if (e.getIDSach() != null && e.getIDSach().toString().toLowerCase().contains(value)) {
                         result_search.add(e);
                     }
                 }

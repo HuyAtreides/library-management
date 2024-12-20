@@ -85,6 +85,7 @@ public class QLChiTietSachDAO {
     }
     
      public Boolean del(String IDSach){
+         DBChiTietSach = new DBConnection();
         Boolean check = DBChiTietSach.SQLUpdate("DELETE FROM library.chitietsach WHERE chitietsach.IDSach = '" + IDSach + "';");
         DBChiTietSach.closeConnection();
         return check;

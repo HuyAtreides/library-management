@@ -77,49 +77,49 @@ public class QLPhieuNhapBUS {
         switch (column) { // Dựa vào Headers
             case "Mã Nhập Kho":
                 for (QLPhieuNhapDTO e : arrNhapKho){
-                    if (e.getMaNhap().toLowerCase().contains(value)) {
+                    if (e.getMaNhap().toLowerCase().contains(value.toLowerCase())) {
                         result_search.add(e);
                     }
                 }
                 break;
             case "Ngày Nhập": 
                 for (QLPhieuNhapDTO e : arrNhapKho){
-                    if (e.getNgayNhap().toLowerCase().contains(value)) {
+                    if (e.getNgayNhap().toLowerCase().contains(value.toLowerCase())) {
                         result_search.add(e);
                     }
                 }
                 break;
             case "Mã Nhân Viên": 
                 for (QLPhieuNhapDTO e : arrNhapKho){
-                    if (e.getNgayNhap().toLowerCase().contains(value)) {
+                    if (e.getMaNhanVien().toLowerCase().contains(value.toLowerCase())) {
                         result_search.add(e);
                     }
                 }
                 break;
             case "Mã Nhà Cung Cấp": 
                 for (QLPhieuNhapDTO e : arrNhapKho){
-                    if (e.getNgayNhap().toLowerCase().contains(value)) {
+                    if (e.getMaNCC().toLowerCase().contains(value.toLowerCase())) {
                         result_search.add(e);
                     }
                 }
                 break;
             case "Mã Sách":
                 for (QLPhieuNhapDTO e : arrNhapKho){
-                    if (e.getMaSach().toString().toLowerCase().contains(value)) {
+                    if (e.getMaSach().toString().toLowerCase().contains(value.toLowerCase())) {
                         result_search.add(e);
                     }
                 }
                 break;
             case "Tổng Số Lượng":
                 for (QLPhieuNhapDTO e : arrNhapKho){
-                    if (Integer.toString(e.getTongSoLuong()).toLowerCase().contains(value)) {
+                    if (Integer.toString(e.getTongSoLuong()).toLowerCase().contains(value.toLowerCase())) {
                         result_search.add(e);
                     }
                 }
                 break;
             case "Tổng Tiền":
                 for (QLPhieuNhapDTO e : arrNhapKho){
-                    if (Integer.toString(e.getTongTien()).toLowerCase().contains(value)) {
+                    if (Integer.toString(e.getTongTien()).toLowerCase().contains(value.toLowerCase())) {
                         result_search.add(e);
                     }
                 }
