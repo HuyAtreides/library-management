@@ -60,10 +60,10 @@ public class QLNhaCungCapDAO {
     public Boolean mod(QLNhaCungCapDTO nhaCungCap){
         DBNhaCungCap = new DBConnection();
         Boolean check = DBNhaCungCap.SQLUpdate("Update library.nhacungcap Set "
-                + " tenNCC='" + nhaCungCap.getTenNCC()
+                + " tenNCC=N'" + nhaCungCap.getTenNCC()
                 + "', sdt='" + nhaCungCap.getSdt()
-                + "', email='" + nhaCungCap.getEmail()
-                + "', diaChi='" + nhaCungCap.getDiaChi()
+                + "', email=N'" + nhaCungCap.getEmail()
+                + "', diaChi=N'" + nhaCungCap.getDiaChi()
                 + "' where maNCC='" + nhaCungCap.getMaNCC()+ "';");
         DBNhaCungCap.closeConnection();
         return check;

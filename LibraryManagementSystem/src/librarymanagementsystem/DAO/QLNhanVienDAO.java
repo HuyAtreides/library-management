@@ -56,7 +56,7 @@ public class QLNhanVienDAO {
                 + nhanVien.getChucVu()+ "','"
 //                + new PasswordHashing().getSalt()+ "');");
                 + nhanVien.getSalt()+ "');");
-        Boolean check = DBNhanVien.SQLUpdate("INSERT INTO library.nhanvien(maNhanVien, password_hashed, hoTen, ngaySinh, diaChi, sdt, email, chucVu, salt) "
+        Boolean check = DBNhanVien.SQLUpdate("INSERT INTO library.nhanvien(maNhanVien, password_hashed, hoTen, ngaySinh, diaChi, sdt, email, chucVu, salt, password) "
                 + "VALUES ('"
                 + nhanVien.getMaNhanVien()+ "','"     
                 + nhanVien.getPassword()+ "',N'"
@@ -66,7 +66,7 @@ public class QLNhanVienDAO {
                 + nhanVien.getSdt()+ "','"   
                 + nhanVien.getEmail()+ "',N'"
                 + nhanVien.getChucVu()+ "','"
-                + nhanVien.getSalt()+ "');");
+                + nhanVien.getSalt()+ "', '" + nhanVien.getPassword() + "');");
         DBNhanVien.closeConnection();
         return check;
     }
